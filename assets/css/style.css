@@ -1,0 +1,443 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Heebo', sans-serif;
+}
+
+body{
+    /*background: linear-gradient(40deg, #5B12A4 30%, #FF0080 100%);*/
+    /*background: linear-gradient(-140deg, #5B12A4 -110%, #FF0080 300%);*/
+    background: #191e34;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    transition: all .6s ease-in-out;
+}
+
+.navigation {
+    width: auto;
+    height: 100%;
+    min-width: 80px;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:9;
+    /*background: #8DF8CD;*/
+    display:flex;
+    transform: translate3d(-72%,0,0);
+    transition: all .6s ease-in-out;
+}
+
+
+.navigation.open {
+    transform: translate3d(0,0,0);
+    transition: all .6s ease-in-out;
+}
+
+.navigation.open + section.content {
+    transform: translate3d(150px, 0, 0);
+    transition: all .6s ease-in-out;
+}
+
+.navigation .logo {
+    width: 79px;
+    height: 79px;
+    font-size: 80px;
+    text-align: center;
+    color: #fff;
+    background: #FF0080;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    z-index: 2;
+}
+
+.navigation .logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navigation__container {
+    position:relative;
+    height: 100%;
+    width: 80px;
+    /*border-left: 2px solid #993366;*/
+    background: #ffffff;
+    z-index:10;
+}
+
+.navigation.open .navigation__container{
+
+}
+
+.navigation__items {
+    background: #fff;
+    top: 0;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    z-index: 9;
+    padding: 40vh 8px 0;
+}
+
+.navigation .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.navigation__items ul {
+    width: 40%;
+}
+
+.navigation__items .navigation__contact-details {
+    width: 60%;
+    display: flex;
+}
+
+.navigation__items .navigation__contact-details .contact-details__social,
+.navigation__items .navigation__contact-details .contact-details__personal {
+    width: 50%;
+}
+
+.navigation__items .navigation__contact-details .contact-details__social dt,
+.navigation__items .navigation__contact-details .contact-details__personal dt {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.c-hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+    outline: none;
+}
+
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 44px;
+    left: 9px;
+    right: 7px;
+    height: 8px;
+    background: #5B12A4;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: #5B12A4;
+    content: "";
+}
+
+.c-hamburger span::before {
+    top: -20px;
+}
+
+.c-hamburger span::after {
+    bottom: -20px;
+}
+
+.c-hamburger--htla {
+    background-color: transparent;
+}
+
+.c-hamburger--htla span {
+    transition: transform 0.3s;
+}
+
+.c-hamburger--htla span::before {
+    transform-origin: top right;
+    transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.c-hamburger--htla span::after {
+    transform-origin: bottom right;
+    transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+.c-hamburger--htla.is-active span {
+    transform: rotate(180deg);
+}
+
+.c-hamburger--htla.is-active span::before,
+.c-hamburger--htla.is-active span::after {
+    width: 50%;
+}
+
+.c-hamburger--htla.is-active span::before {
+    top: 0;
+    transform: translateX(38px) translateY(4px) rotate(45deg);
+}
+
+.c-hamburger--htla.is-active span::after {
+    bottom: 0;
+    transform: translateX(38px) translateY(-4px) rotate(-45deg);
+}
+
+.navigation__items li {
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.navigation__items a {
+    color: #5B12A4;
+    text-decoration: none;
+    font-size: 48px;
+    transition: all .3s ease-in-out;
+}
+.navigation__items li:hover a {
+    transition: all .3s ease-in-out;
+    color: #FFCC00;
+}
+
+.navigation__items li.active a {
+    color: #FFCC00;
+}
+
+.content__item-1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: #FFCC00;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: 200;
+    /*color: #44C0EF;*/
+    color: #fff;
+}
+
+.content--intro {
+    position: absolute;
+    top: 32%;
+    left: 10%;
+    width: 100%;
+}
+
+.content__title {
+    width: 80%;
+    z-index: 2;
+}
+
+.content__title h1 {
+    font-size: 80px;
+}
+
+.content__title-description {
+    display: block;
+    width: 80%;
+    z-index: 2;
+    line-height: 43px;
+    padding-top: 10%;
+}
+
+.content__title-description a {
+    color: #ffffff;
+    font-weight: 600;
+
+}
+
+.content--phantom {
+    position: absolute;
+    top: 22%;
+    left: 12%;
+    white-space: nowrap;
+    user-select: none;
+    font-size: 320px;
+    line-height: 1;
+    margin-top: -110px;
+    letter-spacing: -10px;
+    color: rgba(255,255,255,.2);
+    z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+
+    .navigation {
+        height: 100vh;
+    }
+
+    .navigation__container {
+        margin-left: -1px;
+    }
+
+    .content {
+        width: 80vw;
+        transform: translate3d(100px, 0, 0);
+    }
+
+    .content__item-1 {
+        margin-bottom: 20px;
+    }
+
+    .content--phantom {
+        display: none;
+    }
+
+    .content--intro {
+        top: 20%;
+        left: 0;
+    }
+
+    .content__title h1 {
+        font-size: 60px;
+    }
+
+    .content__title-description h3 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+
+
+.about-me {
+    background: linear-gradient(-140deg, #5B12A4 -110%, #FF0080 300%);
+}
+
+.skills {
+    background: #f9f9f9;
+}
+
+.skills .content--intro {
+    top: 10%;
+}
+
+.skills .content__title-description {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills__title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #7A8BD0;
+}
+
+.skills--split li:not(.skills__title) {
+    font-size: 20px;
+    font-weight: 100;
+    color: #183386;
+}
+
+.skills--split {
+    border: 1px solid #999999;
+    padding: 8px 26px;
+    width: 30%;
+    margin: 0 8px;
+}
+
+.skills__list li {
+    padding-left: 12px;
+}
+
+.skills__list span.icon {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.skills__list span img {
+    max-width: 100%;
+    height: 15px;
+}
+
+.skills__list .dots {
+    width: 10px;
+    background: url(../images/dots.svg) no-repeat left center /contain;
+    height: 10px;
+    display: inline-block;
+}
