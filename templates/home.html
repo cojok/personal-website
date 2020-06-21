@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block navigation %} 
+  {% include 'navigation.html' %}
+{% endblock %}
+{% block content %} 
+<div class="container preview-wrapper">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {% for post in posts %}
+        <div class="post-preview">
+          <a href="posts/{{ post.slug }}.html">
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            <h4 class="post-subtitle">
+              {{ post.summary }}
+            </h4>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">{{ post.author }}</a>
+            {{ post.date }}</p>
+            {% set list_of_tags = post.tags.split(",") %}
+            {% for tag in list_of_tags %}
+              <span class="badge badge-primary">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        <hr>
+      {% endfor %}
+      <!-- Pager -->
+      <!-- <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+  {% with today=today %}
+    {% include 'footer.html' %}
+  {% endwith %}
+{% endblock %}
