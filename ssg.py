@@ -40,6 +40,7 @@ for post in POSTS:
   post_data = {
     'content': POSTS[post],
     'title': post_metadata['title'],
+    'author': post_metadata['author'],
     'date': post_metadata['date']
   }
 

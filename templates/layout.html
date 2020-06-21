@@ -27,6 +27,9 @@
   {% block navigation %} {% endblock %}
   {% block content %} {% endblock %}
   {% block footer %} {% endblock %}
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/clean-blog.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
@@ -37,6 +40,7 @@
       hljs.highlightBlock(block);
     });
   });
+
 </script>
 </body>
 </html>
