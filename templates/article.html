@@ -1,23 +1,10 @@
 {% extends 'layout.html' %}
 {% block navigation %} 
-  {% include 'navigation.html' %}
+  {% with home='active'%}
+    {% include 'navigation.html' %}
+  {% endwith %}
 {% endblock %}
 {% block content %} 
-<!-- <main class="article-main">
-  <div class="article-info">
-      <div>
-          <h5>{{ post.category }}</h5>
-          <h1>{{ post.title }}</h1>
-          <p>{{ post.summary }}</p>
-          <h6>{{ post.author }} — {{ post.date }}</h6>
-      </div>    
-  </div>
-  <article class="article-container">
-      <div class="content">
-      {{ post.content }}
-      </div>
-  </article>
-</main> -->
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/post-bg.jpg')">
   <div class="overlay"></div>
