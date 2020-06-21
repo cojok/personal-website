@@ -17,4 +17,4 @@ Among my skill set can be found:
 * Python/Bash
 * HTML5/CSS3/Vuejs
 
-Feel free to [contact me](/contact)
+Feel free to [contact me](/contact) and here is my [resume](/assets/Flavius_Cojocariu_Resume.pdf)
