@@ -22,6 +22,7 @@ home_template = env.get_template('home.html')
 post_template = env.get_template('article.html')
 contact_template = env.get_template('contact.html')
 about_template = env.get_template('about.html')
+template_404 = env.get_template('404.html')
 
 today = (datetime.today()).year
 
@@ -32,6 +33,12 @@ home_html = home_template.render(posts=posts_metadata, today=today)
 
 with open('output/home.html', 'w') as file:
   file.write(home_html)
+
+#404 convertion
+html_404 = template_404.render()
+
+with open('output/404.html' ,'w') as file:
+  file.write(html_404)
 
 # Posts convertion
 for post in POSTS:
