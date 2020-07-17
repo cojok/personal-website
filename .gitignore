@@ -133,3 +133,9 @@ output
 tes3.md
 test2.md
 favicon_io.*
+
+# ide
+.vscode
+.vim
+.idea
+.gradle

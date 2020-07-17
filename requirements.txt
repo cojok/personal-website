@@ -1,9 +1,8 @@
-greenlet==0.4.16
+autopep8==1.5.3
+css-html-js-minify==2.5.5
 Jinja2==2.11.2
 markdown2==2.3.9
 MarkupSafe==1.1.1
-msgpack==1.0.0
-neovim==0.3.1
-pynvim==0.4.1
-PyYAML==5.3.1
-redis==3.5.3
+pycodestyle==2.6.0
+Pygments==2.6.1
+toml==0.10.1

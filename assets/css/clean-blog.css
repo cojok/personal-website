@@ -109,6 +109,7 @@ img::-moz-selection {
   padding: 13px;
   text-transform: uppercase;
   color: #343a40;
+  outline: none;
 }
 
 #mainNav .navbar-nav > li.nav-item > a {
@@ -379,4 +380,21 @@ footer .copyright {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
+}
+
+div[class*="page-"] {
+  display: none;
+}
+
+.old-posts,
+.new-posts {
+  display: none;
+}
+
+.badge {
+  cursor: pointer;
+}
+
+.badge:hover {
+  background: #0085A1;
 }

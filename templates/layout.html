@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
   <title>{{ title }}</title>
 
   <!-- Bootstrap core CSS -->
@@ -20,30 +19,19 @@
   <link href="/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="/assets/css/clean-blog.css" rel="stylesheet">
+  <link href="/assets/css/clean-blog.min.css" rel="stylesheet">
   <!-- <link href="/assets/css/code-snippet.css" rel="stylesheet"> -->
   <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/rainbow.min.css">
 
 </head>
 <body>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+  <script src="/assets/js/clean-blog.min.js"></script>
   {% block navigation %} {% endblock %}
   {% block content %} {% endblock %}
   {% block footer %} {% endblock %}
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/clean-blog.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.configure({
-        languages: ['css', 'html', 'javascript', 'python']
-      });
-      hljs.highlightBlock(block);
-    });
-  });
-
-</script>
 </body>
 </html>
