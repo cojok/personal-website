@@ -1,4 +1,3 @@
-
 ## Hello!
 
 I'm Flavius, a fullstack developer with focus on backend, based in München, Germany. I have been in the field nearly 10 years and I enjoyed every minute of it.
