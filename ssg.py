@@ -14,13 +14,10 @@ for markdown_post in os.listdir('content/articles'):
     POSTS[markdown_post] = markdown(file.read(),
                                     extras = ['metadata', 'fenced-code-blocks', 'code-friendly', 'cuddled-lists'])
 
-# POSTS = {
-#   post: POSTS[post] for post in sorted(POSTS, key = lambda post: datetime.strptime(POSTS[post].metadata['date'],
-#                                                                                    '%d.%m.%Y'), reverse = True)
-# }
-
-for post in POSTS:
-  print(POSTS[post].metadata)
+POSTS = {
+  post: POSTS[post] for post in sorted(POSTS, key = lambda post: datetime.strptime(POSTS[post].metadata['date'],
+                                                                                   '%d.%m.%Y'), reverse = True)
+}
 
 env = Environment(loader = FileSystemLoader('templates'))
 home_template = env.get_template('home.html')
