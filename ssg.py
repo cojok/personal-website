@@ -3,7 +3,6 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
 from css_html_js_minify import process_single_js_file, process_single_css_file, process_single_html_file
-from jsmin import jsmin
 
 POSTS = { }
 
@@ -88,12 +87,8 @@ with open('content/about.md', 'r') as about:
 
 # minify the js and css
 process_single_css_file('./assets/css/clean-blog.css', overwrite = False)
-# process_single_js_file('./assets/js/home.js', overwrite = False)
-# process_single_js_file('./assets/js/clean-blog.js', overwrite = False)
-
-with open('./assets/js/home.js', 'rw+') as file:
-  minified = jsmin(file)
-  file.write(minified)
+process_single_js_file('./assets/js/home.js', overwrite = False)
+process_single_js_file('./assets/js/clean-blog.js', overwrite = False)
 
 # testing minify html
 for html in os.listdir('./output/'):
