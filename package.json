@@ -4,7 +4,7 @@
   "description": "This repository represents my own personal website done with a custom static site generator in python",
   "main": "index.js",
   "scripts": {
-    "minifyJS": "uglifyjs assets/js/clean-blog.js -c -m=false --mangle-props --warn --output assets/js/main.min.js",
+    "minifyJS": "uglifyjs assets/js/clean-blog.js -c -m --mangle-props --warn --output assets/js/main.min.js",
     "minifyCSS": "cat assets/css/*.css | postcss > assets/css/main.min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,6 @@
   "dependencies": {
     "cssnano": "^4.1.10",
     "postcss-cli": "^7.1.1",
-    "uglify-es": "^3.3.9",
-    "uglify-js": "^3.10.0"
+    "uglify-es": "^3.3.9"
   }
 }
