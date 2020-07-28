@@ -24,5 +24,8 @@
     "postcss-cli": "^7.1.1",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.10.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0"
   }
 }
