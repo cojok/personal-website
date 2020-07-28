@@ -139,3 +139,6 @@ favicon_io.*
 .vim
 .idea
 .gradle
+package-lock.json
+/assets/js/main.min.js
+/node_modules/

@@ -5,7 +5,7 @@
   {% endwith %}
 {% endblock %}
 {% block content %} 
-<div class="container preview-wrapper">
+<div class="container preview-wrapper home">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       {% for post in posts %}
@@ -35,7 +35,6 @@
     </div>
   </div>
 </div>
-<script src="/assets/js/home.min.js"></script>
 {% endblock %}
 {% block footer %}
   {% with today=today %}

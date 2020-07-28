@@ -1,4 +1,5 @@
 import os
+import subprocess
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
@@ -86,9 +87,8 @@ with open('content/about.md', 'r') as about:
     file.write(about_html)
 
 # minify the js and css
-process_single_css_file('./assets/css/clean-blog.css', overwrite = False)
-process_single_js_file('./assets/js/home.js', overwrite = False)
-process_single_js_file('./assets/js/clean-blog.js', overwrite = False)
+subprocess.run('npm run minifyJS', shell = True, check = True)
+subprocess.run('npm run minifyCSS', shell = True, check = True)
 
 # testing minify html
 for html in os.listdir('./output/'):
