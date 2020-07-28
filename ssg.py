@@ -41,7 +41,9 @@ for i in range(len(tmp_posts_metadata)):
     chunk += 5
   posts_metadata[i]['page'] = page
 
-home_html = home_template.render(posts = posts_metadata, today = today)
+home_html = home_template.render(posts = posts_metadata, today = today, title='Home page', author='Flavius '
+                                                                                                  'Cojocariu',
+                                 summary='Home page of the personal website of Flavius Cojocariu')
 
 with open('output/home.html', 'w+') as file:
   file.write(home_html)
@@ -63,7 +65,8 @@ for post in POSTS:
     'date': post_metadata['date']
   }
 
-  post_html = post_template.render(post = post_data)
+  post_html = post_template.render(post = post_data, title=post_metadata['title'], author=post_metadata['author'],
+                                   summary=post_metadata['summary'])
   post_file_path = 'output/posts/{slug}.html'.format(slug = post_metadata['slug'], today = today)
 
   os.makedirs(os.path.dirname(post_file_path), exist_ok = True)
@@ -73,7 +76,9 @@ for post in POSTS:
 # contact convertion    
 with open('content/contact.md', 'r') as contact:
   contact_data = markdown(contact.read(), extras = ['metadata'])
-  contact_html = contact_template.render(content = contact_data)
+  contact_html = contact_template.render(content = contact_data, title='Contact Page', author='Flavius Cojocariu',
+                                         summary='This is the contact page of the personal website of Flavius '
+                                                     'Cojocariu')
   contact_file_path = 'output/contact.html'
   with open(contact_file_path, 'w+') as file:
     file.write(contact_html)
@@ -81,7 +86,8 @@ with open('content/contact.md', 'r') as contact:
 # about convertion
 with open('content/about.md', 'r') as about:
   about_data = markdown(about.read(), extras = ['metadata'])
-  about_html = about_template.render(content = about_data)
+  about_html = about_template.render(content = about_data, title='About Page', author='Flavius Cojocariu',
+                                     summary='About page of the personal website of Flavius Cojocariu')
   about_file_path = 'output/about.html'
   with open(about_file_path, 'w+') as file:
     file.write(about_html)
