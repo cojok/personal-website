@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
-from css_html_js_minify import process_single_js_file, process_single_css_file, process_single_html_file
+from css_html_js_minify import process_single_html_file
 
 POSTS = { }
 
