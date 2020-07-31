@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /assets/Flavius_Cojocariu_Resume.pdf
+
+Sitemap: sitemap.xml
+
