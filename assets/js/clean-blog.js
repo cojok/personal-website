@@ -135,9 +135,14 @@
       var messageValidation = validateMessage(this.message);
 
       if (emailValidation || nameValidation || messageValidation) {
+        var body = {
+          name: this.name,
+          email: this.email,
+          message: this.message,
+        };
         var oReq = new XMLHttpRequest();
-        oReq.open('GET', 'http://www.example.org/example.txt', true);
-        oReq.send();
+        oReq.open('POST', 'https://api.flaviuscojocariu.com/v1/contact', true);
+        oReq.send(body);
         oReq.addEventListener('load', function () {
           console.log(this.responseText);
         });
