@@ -1,9 +1,10 @@
 stages:
   - deploy
+variables:
+  TARGET_DIR: /var/www/flaviuscojocariu.com/personal-website
 deploy:
   stage: deploy
   script:
-    - cat generated-bash-script | su --shell /bin/bash --login admin
     - source env/bin/activate
     - python -m pip install -r requirements.txt
     - npm install
