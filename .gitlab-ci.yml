@@ -1,9 +1,9 @@
+variables:
+  GIT_CLONE_PATH: /var/www/flaviuscojocariu.com/personal-website
 stages:
   - deploy
 deploy:
   stage: deploy
-  variables:
-    TARGET_DIR: /var/www/flaviuscojocariu.com/personal-website
   only:
     - master
   script:
