@@ -1,6 +1,6 @@
 variables:
   BUILD_DIR: 'personal-website'
-  # GIT_CLONE_PATH: /var/www/flaviuscojocariu.com/personal-website
+  GIT_CLONE_PATH: /var/www/flaviuscojocariu.com/personal-website/builds/tmp
   TARGET_DIR: /var/www/flaviuscojocariu.com/personal-website
 stages:
   - deploy
@@ -10,7 +10,6 @@ deploy:
     - master
   script:
     - echo "Hey"
-    - echo $CI_BUILDS_DIR
     - python3 -m pip install virtualenv
     - virtualenv env
     - source env/bin/activate
@@ -18,6 +17,6 @@ deploy:
     - npm install
     - mkdir -p output/posts
     - python3 ssg.py
-    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/$CI_JOB_ID/0/cojokka/personal-website/* /var/www/flaviuscojocariu.com/personal-website/
+    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/tmp/cojokka/personal-website/* /var/www/flaviuscojocariu.com/personal-website/
     - rm -rf /var/www/flaviuscojocariu.com/personal-website/builds
     - echo "Bey"
