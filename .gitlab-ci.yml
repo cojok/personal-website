@@ -17,6 +17,6 @@ deploy:
     - npm install
     - mkdir -p output/posts
     - python3 ssg.py
-    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/maUm3xa-/0/cojokka/personal-website/* /var/www/flaviuscojocariu.com/personal-website/
+    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/$CI_JOB_ID/0/cojokka/personal-website/* /var/www/flaviuscojocariu.com/personal-website/
     - rm -rf /var/www/flaviuscojocariu.com/personal-website/builds
     - echo "Bey"
