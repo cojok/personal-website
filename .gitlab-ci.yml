@@ -13,5 +13,5 @@ deploy:
     - source env/bin/activate
     - python3 -m pip install -r requirements.txt
     - npm install
-    - python3 ssg.py  
+    # - python3 ssg.py  
 
