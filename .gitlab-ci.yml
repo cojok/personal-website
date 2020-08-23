@@ -1,0 +1,10 @@
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  script:
+    - source env/bin/activate
+    - python -m pip install -r requirements.txt
+    - npm install
+    - python3 ssg.py  
+
