@@ -1,7 +1,7 @@
 variables:
-  CI_PROJECT_DIR: /var/www/flaviuscojocariu.com/
-  BUILD_DIR: "personal-website"
+  BUILD_DIR: 'personal-website'
   # GIT_CLONE_PATH: /var/www/flaviuscojocariu.com/personal-website
+  TARGET_DIR: /var/www/flaviuscojocariu.com/personal-website
 stages:
   - deploy
 deploy:
@@ -14,5 +14,8 @@ deploy:
     - source env/bin/activate
     - python3 -m pip install -r requirements.txt
     - npm install
-    # - python3 ssg.py  
+    - mkdir -p output/posts
+    - python3 ssg.py
+    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/maUm3xa-/0/cojokka/personal-website/* /var/www/flaviuscojocariu.com/personal-website/
+    - rm -rf /var/www/flaviuscojocariu.com/personal-website/builds
 
