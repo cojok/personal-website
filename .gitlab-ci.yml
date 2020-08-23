@@ -8,8 +8,10 @@ deploy:
   only:
     - master
   script:
+    - python3 -m pip install virtualenv
+    - virtualenv env
     - source env/bin/activate
-    - python -m pip install -r requirements.txt
+    - python3 -m pip install -r requirements.txt
     - npm install
     - python3 ssg.py  
 
