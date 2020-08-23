@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block navigation %} 
+  {% with home='active'%}
+    {% include 'navigation.html' %}
+  {% endwith %}
+{% endblock %}
+{% block content %} 
+<div class="container preview-wrapper home">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      {% for post in posts %}
+        <div class="post-preview shadow-lg p-3 mb-5 page-{{post.page}} {{ post.tags.replace(',', '') }}" style="border: 3px solid;">
+          <a href="/posts/{{ post.slug }}">
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            <h4 class="post-subtitle">
+              {{ post.summary }}
+            </h4>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">{{ post.author }}</a>
+            {{ post.date }}</p>
+            {% set list_of_tags = post.tags.split(",") %}
+            {% for tag in list_of_tags %}
+              <span class="badge badge-primary">{{ tag }}</span>
+            {% endfor %}
+        </div>
+      {% endfor %}
+      <!-- Pager -->
+      <div class="clearfix">
+        <a class="btn btn-primary float-left new-posts" href="#">&larr; Newer Posts</a>
+        <a class="btn btn-primary float-right old-posts" href="#">Older Posts &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+  {% with today=today %}
+    {% include 'footer.html' %}
+  {% endwith %}
+{% endblock %}

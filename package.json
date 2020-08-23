@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This repository represents my own personal website done with a custom static site generator in python",
+  "main": "index.js",
+  "scripts": {
+    "minifyJS": "uglifyjs assets/js/clean-blog.js -c -m --mangle-props --warn --output assets/js/main.min.js",
+    "minifyCSS": "cat assets/css/*.css | postcss > assets/css/main.min.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cojok/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cojok/personal-website/issues"
+  },
+  "homepage": "https://github.com/cojok/personal-website#readme",
+  "dependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^7.1.1",
+    "uglify-es": "^3.3.9"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0"
+  }
+}

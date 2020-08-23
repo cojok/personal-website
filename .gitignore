@@ -127,3 +127,19 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# output
+output
+tes3.md
+test2.md
+favicon_io.*
+
+# ide
+.vscode
+.vim
+.idea
+.gradle
+package-lock.json
+/assets/js/main.min.js
+/node_modules/
+/assets/css/main.min.css

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ summary }}">
+  <meta name="author" content="{{ author }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <title>{{ title }}</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/rainbow.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="/assets/css/main.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+  <script src="/assets/js/jquery.min.js" defer></script>
+  <script src="/assets/js/bootstrap.bundle.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" defer></script>
+  <script src="/assets/js/clean-blog.js" defer></script>
+  {% block navigation %} {% endblock %}
+  {% block content %} {% endblock %}
+  {% block footer %} {% endblock %}
+</body>
+</html>
