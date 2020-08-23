@@ -10,6 +10,7 @@ deploy:
     - master
   script:
     - echo "Hey"
+    - echo $CI_BUILDS_DIR
     - python3 -m pip install virtualenv
     - virtualenv env
     - source env/bin/activate
