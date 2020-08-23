@@ -3,6 +3,7 @@ stages:
 deploy:
   stage: deploy
   script:
+    - cat generated-bash-script | /bin/bash --login
     - source env/bin/activate
     - python -m pip install -r requirements.txt
     - npm install
