@@ -32,7 +32,7 @@ For installing the oh-my-zsh framework we need to make sure the server has git a
 ```bash
 $ apt install zsh -y
 
-$ apt isntall git -y
+$ apt install git -y
 
 $ apt install curl -y
 ```
