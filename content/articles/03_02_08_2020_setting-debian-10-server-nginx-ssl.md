@@ -17,11 +17,11 @@ This tutorial assumes that you have some knowledge about the terminology that wi
 >***NOTE*** The bash commands assume you are logged in your server as a root user.
 
 Connect to the server via ssh, if the configuration is for local machine/host igonore this step.
-```bash
+```shell
 $ ssh user@server-ip-address
 ```
 The first thing to do after a fresh install is to make sure the OS is up-to-date. The first command is to check whether the installed packages need to be upgraded or not.
-```bash
+```shell
 $ apt update
 
 $ apt upgrade -y
@@ -131,7 +131,7 @@ $ nvim /etc/nginx/sites-available/your_domain
 ```
 
 Inside the new file hit **i** so you enter edit mode in nvim and add:
-```
+```nginx
 server {
         listen 80;
         listen [::]:80;
@@ -148,7 +148,7 @@ server {
 ```
 
 Now lets uncomment this line in ***/etc/nginx/nginx.conf***
-```
+```bash
 server_names_hash_bucket_size 64;
 ```
 
@@ -172,7 +172,7 @@ $ nvim /var/www/your_domain/index.html
 ```
 
 Copy this into the ***index.html***
-```
+```html
 <html>
     <head>
         <title>Welcome to your_domain</title>
@@ -202,7 +202,7 @@ $ ufw status
 ```
 
 Almost done. Right now you need to obtain the certificate for your_domain.
-```
+```bash
 $ certbot --nginx -d your_domain
 ```
 
@@ -216,7 +216,7 @@ $ nvim /etc/nginx/sites-available/your_domain
 ```
 
 Inside site-available/your_domain config change line to this.
-```
+```bash
 server_name your_domain www.your_domain;
 ```
 

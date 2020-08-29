@@ -12,7 +12,7 @@ for markdown_post in os.listdir('content/articles'):
 
   with open(file_path, 'r') as file:
     POSTS[markdown_post] = markdown(file.read(),
-                                    extras = ['metadata', 'fenced-code-blocks', 'code-friendly', 'cuddled-lists'])
+                                    extras = ['metadata', 'fenced-code-blocks'])
 
 POSTS = {
   post: POSTS[post] for post in sorted(POSTS, key = lambda post: datetime.strptime(POSTS[post].metadata['date'],
@@ -94,6 +94,7 @@ with open('content/about.md', 'r') as about:
 
 # minify the js and css
 subprocess.run('npm run minifyJS', shell = True, check = True)
+subprocess.run('npm run concat:css', shell = True, check = True)
 subprocess.run('npm run minifyCSS', shell = True, check = True)
 
 # testing minify html
