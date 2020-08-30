@@ -12,7 +12,7 @@ for markdown_post in os.listdir('content/articles'):
 
   with open(file_path, 'r') as file:
     POSTS[markdown_post] = markdown(file.read(),
-                                    extras = ['metadata', 'fenced-code-blocks'])
+                                    extras = ['metadata', 'fenced-code-blocks', 'code-friendly', 'cuddled-lists'])
 
 POSTS = {
   post: POSTS[post] for post in sorted(POSTS, key = lambda post: datetime.strptime(POSTS[post].metadata['date'],

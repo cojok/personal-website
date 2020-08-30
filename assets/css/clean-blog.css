@@ -38,7 +38,8 @@ a {
   transition: all 0.2s;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
   color: #0085A1;
 }
 
@@ -147,18 +148,25 @@ img::-moz-selection {
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.9);
   }
+
   #mainNav.is-fixed .navbar-brand {
     color: #212529;
   }
-  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
+
+  #mainNav.is-fixed .navbar-brand:focus,
+  #mainNav.is-fixed .navbar-brand:hover {
     color: #0085A1;
   }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+
+  #mainNav.is-fixed .navbar-nav>li.nav-item>a {
     color: #212529;
   }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
+
+  #mainNav.is-fixed .navbar-nav>li.nav-item>a:focus,
+  #mainNav.is-fixed .navbar-nav>li.nav-item>a:hover {
     color: #0085A1;
   }
+
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     transform: translate3d(0, 100%, 0);
@@ -371,7 +379,9 @@ footer .copyright {
   border-radius: 0;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   color: #fff;
   background-color: #00657b;
   border-color: #00657b;
@@ -397,4 +407,19 @@ div[class*="page-"] {
 
 .badge:hover {
   background: #0085A1;
+}
+
+.alert {
+  margin: 140px auto 0;
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }

@@ -127,6 +127,7 @@
       }, true);
     }
 
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -134,17 +135,41 @@
       var emailValidation = validateEmail(this.email);
       var messageValidation = validateMessage(this.message);
 
-      if (emailValidation || nameValidation || messageValidation) {
+      if (emailValidation || nameValidation || messageValidation) {      
         var body = {
-          name: this.name,
-          email: this.email,
-          message: this.message,
+          name: this.name.value,
+          email: this.email.value,
+          message: this.message.value,
         };
+        var alert = document.querySelector('.alert');
+        var alertHeading = document.querySelector('.alert .alert-heading');
+        var alertBody = document.querySelector('.alert .alert-body')
         var oReq = new XMLHttpRequest();
-        oReq.open('POST', 'https://api.flaviuscojocariu.com/v1/contact', true);
-        oReq.send(body);
+        var self = this;
+        oReq.open('POST', 'https://api.flaviuscojocariu.com/v1/contact');
+        oReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.flaviuscojocariu.com');
+        oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        oReq.send(JSON.stringify(body));
         oReq.addEventListener('load', function () {
-          console.log(this.responseText);
+          if(this.status >= 200 && this.status < 300) {
+            self.name.value = '';
+            self.email.value = '';
+            self.message.value = '';
+            alert.classList.add('alert-success');
+            alertHeading.innerHTML = 'Contact sent successful!';
+            alertBody = 'An email with the contact details like name, email and message was sent successful to my inbox. I will try to get in touch soon. <br> Thanks.'
+          } else {
+            alert.classList.add('alert-danger');
+            alertHeading.innerHTML = 'Something went wrong!';
+            alertBody.innerHTML = 'looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
+          }
+          alert.classList.remove('hidden');
+        });
+        oReq.addEventListener('error', function() {
+          alert.classList.add('alert-danger');
+          alertHeading.innerHTML = 'Something went wrong!';
+          alertBody.innerHTML = 'Looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
+          alert.classList.remove('hidden');
         });
       }
     }, true);

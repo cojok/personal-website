@@ -17,11 +17,11 @@ This tutorial assumes that you have some knowledge about the terminology that wi
 >***NOTE*** The bash commands assume you are logged in your server as a root user.
 
 Connect to the server via ssh, if the configuration is for local machine/host igonore this step.
-```shell
+```bash
 $ ssh user@server-ip-address
 ```
 The first thing to do after a fresh install is to make sure the OS is up-to-date. The first command is to check whether the installed packages need to be upgraded or not.
-```shell
+```bash
 $ apt update
 
 $ apt upgrade -y
