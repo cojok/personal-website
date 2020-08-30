@@ -134,17 +134,21 @@
       var emailValidation = validateEmail(this.email);
       var messageValidation = validateMessage(this.message);
 
-      if (emailValidation || nameValidation || messageValidation) {
+      if (emailValidation || nameValidation || messageValidation) {      
         var body = {
-          name: this.name,
-          email: this.email,
-          message: this.message,
+          name: this.name.value,
+          email: this.email.value,
+          message: this.message.value,
         };
         var oReq = new XMLHttpRequest();
-        oReq.open('POST', 'https://api.flaviuscojocariu.com/v1/contact', true);
-        oReq.send(body);
+        oReq.open('POST', 'https://api.flaviuscojocariu.com/v1/contact');
+        oReq.setRequestHeader('Access-Control-Allow-Origin', 'https://www.flaviuscojocariu.com');
+        oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        oReq.send(JSON.stringify(body));
         oReq.addEventListener('load', function () {
+          console.log('==RESPONSE_TEXT==');
           console.log(this.responseText);
+          console.log('==RESPONSE_TEXT==');
         });
       }
     }, true);
