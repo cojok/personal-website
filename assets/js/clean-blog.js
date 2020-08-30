@@ -164,12 +164,20 @@
             alertBody.innerHTML = 'looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
           }
           alert.classList.remove('hidden');
+
+          setTimeout(function () {
+            alert.classList.add('hidden');
+          }, 10000);
         });
         oReq.addEventListener('error', function() {
           alert.classList.add('alert-danger');
           alertHeading.innerHTML = 'Something went wrong!';
           alertBody.innerHTML = 'Looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
           alert.classList.remove('hidden');
+          
+          setTimeout(function () {
+            alert.classList.add('hidden');
+          }, 10000);
         });
       }
     }, true);
