@@ -1,0 +1,22 @@
+variables:
+  BUILD_DIR: 'personal-website'
+  GIT_CLONE_PATH: /var/www/flaviuscojocariu.com/personal-website/builds/tmp
+  TARGET_DIR: /var/www/flaviuscojocariu.com/personal-website
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo "Hey"
+    - python3 -m pip install virtualenv
+    - virtualenv env
+    - source env/bin/activate
+    - python3 -m pip install -r requirements.txt
+    - npm install
+    - mkdir -p output/posts
+    - python3 ssg.py
+    - cp -R -u /var/www/flaviuscojocariu.com/personal-website/builds/tmp/* /var/www/flaviuscojocariu.com/personal-website/
+    - rm -rf /var/www/flaviuscojocariu.com/personal-website/builds
+    - echo "Bey"

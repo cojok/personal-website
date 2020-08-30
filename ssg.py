@@ -94,6 +94,7 @@ with open('content/about.md', 'r') as about:
 
 # minify the js and css
 subprocess.run('npm run minifyJS', shell = True, check = True)
+subprocess.run('npm run concat:css', shell = True, check = True)
 subprocess.run('npm run minifyCSS', shell = True, check = True)
 
 # testing minify html

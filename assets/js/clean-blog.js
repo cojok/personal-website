@@ -1,14 +1,14 @@
 (function () {
   "use strict"; // Start of use strict
 
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.configure({
-        languages: ['css', 'html', 'javascript', 'python']
-      });
-      hljs.highlightBlock(block);
-    });
-  });
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   document.querySelectorAll('pre code').forEach((block) => {
+  //     hljs.configure({
+  //       languages: ['css', 'html', 'javascript', 'python']
+  //     });
+  //     hljs.highlightBlock(block);
+  //   });
+  // });
 
   const createSearchString = function (searchObject) {
     let string = '?';
@@ -127,9 +127,6 @@
       }, true);
     }
 
-    setTimeout(function() {
-      
-    }, 100);
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();

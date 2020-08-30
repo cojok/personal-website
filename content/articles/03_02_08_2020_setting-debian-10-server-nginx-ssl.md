@@ -32,7 +32,7 @@ For installing the oh-my-zsh framework we need to make sure the server has git a
 ```bash
 $ apt install zsh -y
 
-$ apt isntall git -y
+$ apt install git -y
 
 $ apt install curl -y
 ```
@@ -131,7 +131,7 @@ $ nvim /etc/nginx/sites-available/your_domain
 ```
 
 Inside the new file hit **i** so you enter edit mode in nvim and add:
-```
+```nginx
 server {
         listen 80;
         listen [::]:80;
@@ -148,7 +148,7 @@ server {
 ```
 
 Now lets uncomment this line in ***/etc/nginx/nginx.conf***
-```
+```bash
 server_names_hash_bucket_size 64;
 ```
 
@@ -172,7 +172,7 @@ $ nvim /var/www/your_domain/index.html
 ```
 
 Copy this into the ***index.html***
-```
+```html
 <html>
     <head>
         <title>Welcome to your_domain</title>
@@ -202,7 +202,7 @@ $ ufw status
 ```
 
 Almost done. Right now you need to obtain the certificate for your_domain.
-```
+```bash
 $ certbot --nginx -d your_domain
 ```
 
@@ -216,7 +216,7 @@ $ nvim /etc/nginx/sites-available/your_domain
 ```
 
 Inside site-available/your_domain config change line to this.
-```
+```bash
 server_name your_domain www.your_domain;
 ```
 

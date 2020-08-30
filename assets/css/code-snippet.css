@@ -1,13 +1,29 @@
+/*!
+ * Start Code Highlight 
+ */
+
+/* fix bootstrap conflict with Pygments */
+.codehilite pre {
+  white-space: pre;
+  border-radius: inherit;
+  display: inherit;
+  background-color: inherit;
+  border: inherit;
+  color: inherit;
+  padding: 12px;
+}
+
+/* fix conflict with other sytlesheets */
+.codehilite .m {
+  margin: inherit;
+}
+
 .codehilite .hll {
   background-color: #49483e
 }
 
 .codehilite {
   background: #272822;
-  color: #f8f8f2
-}
-
-.codehilite code {
   color: #f8f8f2
 }
 
@@ -92,6 +108,17 @@
 }
 
 /* Generic.Inserted */
+.codehilite .go {
+  color: #66d9ef
+}
+
+/* Generic.Output */
+.codehilite .gp {
+  color: #f92672;
+  font-weight: bold
+}
+
+/* Generic.Prompt */
 .codehilite .gs {
   font-weight: bold
 }

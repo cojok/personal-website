@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "minifyJS": "uglifyjs assets/js/clean-blog.js -c -m --mangle-props --warn --output assets/js/main.min.js",
-    "minifyCSS": "cat assets/css/*.css | postcss > assets/css/main.min.css",
+    "concat:css": "rm -rf assets/css/main.concat.css && concat -o assets/css/main.concat.css assets/css/*.css",
+    "minifyCSS": "rm -rf assets/css/main.min.css && postcss assets/css/main.concat.css -o assets/css/main.min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/cojok/personal-website#readme",
   "dependencies": {
+    "concat": "^1.0.3",
     "cssnano": "^4.1.10",
     "postcss-cli": "^7.1.1",
     "uglify-es": "^3.3.9"
