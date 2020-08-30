@@ -155,10 +155,12 @@
             self.name.value = '';
             self.email.value = '';
             self.message.value = '';
+            alert.classList.remove('alert-danger');
             alert.classList.add('alert-success');
             alertHeading.innerHTML = 'Contact sent successful!';
             alertBody = 'An email with the contact details like name, email and message was sent successful to my inbox. I will try to get in touch soon. <br> Thanks.'
           } else {
+            alert.classList.remove('alert-success');
             alert.classList.add('alert-danger');
             alertHeading.innerHTML = 'Something went wrong!';
             alertBody.innerHTML = 'looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
@@ -171,6 +173,7 @@
         });
         oReq.addEventListener('error', function() {
           alert.classList.add('alert-danger');
+          alert.classList.remove('alert-success');
           alertHeading.innerHTML = 'Something went wrong!';
           alertBody.innerHTML = 'Looks like something went wrong while you tried to contact me. If this is a permanent error you can send me an email at: <a href="mailto: cojokk@gmail.com">cojokka@gmail.com</a>. <br> Thanks.';
           alert.classList.remove('hidden');
